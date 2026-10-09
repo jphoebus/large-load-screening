@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Which Data Center Load Counts: How Six PJM States Screen Large-Load Requests</title>
+<meta name="description" content="How Pennsylvania, Virginia, Ohio, Maryland, New Jersey, and Illinois screen data center electricity requests before they count in the forecasts behind PJM&#x27;s capacity needs. Current as of October 9, 2026.">
+<meta property="og:title" content="Which Data Center Load Counts: How Six PJM States Screen Large-Load Requests">
+<meta property="og:description" content="How six PJM states screen data center electricity requests: forecast review, contract terms, collateral, duplicate disclosure, and public reporting.">
+<meta property="og:image" content="https://jphoebus.github.io/large-load-screening/screening-preview.png">
+<meta property="og:url" content="https://jphoebus.github.io/large-load-screening/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --limestone: #EDF0F1;
+    --paper: #FFFFFF;
+    --ink: #1B2631;
+    --slate: #52606D;
+    --rule: #CBD2D9;
+    --accent: #1F5C4A;
+    --accent-soft: #DCEBE5;
+    --font: "Public Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--limestone);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 17px;
+    line-height: 1.55;
+  }
+  a { color: var(--accent); text-underline-offset: 2px; }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .measure { max-width: 68ch; }
+
+  /* Header */
+  header { padding: 64px 0 40px; }
+  h1 {
+    font-size: clamp(2rem, 4.6vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px;
+    max-width: 18ch;
+  }
+  .lede { font-size: 1.15rem; color: var(--slate); margin: 0; }
+
+  /* Where each state stands */
+  .standing {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    border-top: 3px solid var(--ink);
+    margin-top: 40px;
+  }
+  .standing div {
+    padding: 16px 16px 20px 0;
+    border-right: 1px solid var(--rule);
+    padding-left: 16px;
+  }
+  .standing div:first-child { padding-left: 0; }
+  .standing div:last-child { border-right: 0; }
+  .standing strong { display: block; font-size: 1.25rem; font-weight: 700; }
+  .standing span { display: block; color: var(--slate); font-size: 0.95rem; }
+  .standing time { display: block; font-size: 0.85rem; color: var(--accent); font-weight: 600; margin-top: 6px; }
+
+  /* Comparison */
+  section { padding: 48px 0; }
+  h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 20px; align-items: center; }
+  .filters p { margin: 0 8px 0 0; color: var(--slate); font-size: 0.95rem; }
+  .chip {
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border: 1.5px solid var(--accent);
+    border-radius: 999px;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+  }
+  .chip[aria-pressed="false"] { background: transparent; color: var(--accent); }
+  .table-scroll {
+    overflow-x: auto;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+  }
+  table { border-collapse: collapse; width: 100%; min-width: 980px; font-size: 0.92rem; }
+  th, td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--rule); }
+  thead th {
+    font-size: 1rem;
+    font-weight: 700;
+    border-bottom: 2px solid var(--ink);
+    position: sticky;
+    top: 0;
+    background: var(--paper);
+  }
+  tbody th {
+    font-weight: 600;
+    color: var(--slate);
+    width: 170px;
+    position: sticky;
+    left: 0;
+    background: var(--paper);
+  }
+  tr.group th {
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  [hidden] { display: none !important; }
+  td.empty { color: var(--slate); font-style: italic; }
+  td.sources a { display: block; word-break: break-word; margin-bottom: 4px; }
+  .status-msg { padding: 24px; color: var(--slate); }
+
+  /* Analysis */
+  .analysis { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  .analysis h3 { font-size: 1.1rem; font-weight: 700; margin: 24px 0 4px; }
+  .analysis p { margin: 0; }
+  .question {
+    margin-top: 32px;
+    padding-left: 20px;
+    border-left: 4px solid var(--accent);
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  ul.watch { padding-left: 1.1em; margin: 12px 0 0; }
+  ul.watch li { margin-bottom: 10px; }
+
+  .pjm { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 8px; }
+  .pjm h3 { font-size: 1.1rem; font-weight: 700; margin: 16px 0 4px; }
+  .pjm p { margin: 0; }
+  #pjm { background: var(--paper); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  footer { border-top: 1px solid var(--rule); padding: 40px 0 64px; color: var(--slate); font-size: 0.95rem; }
+  footer p { margin: 0 0 12px; }
+
+  @media (max-width: 800px) {
+    .standing { grid-template-columns: 1fr 1fr; }
+    .standing div { border-right: 0; border-bottom: 1px solid var(--rule); padding-left: 0; }
+    .analysis, .pjm { grid-template-columns: 1fr; gap: 16px; }
+    header { padding-top: 40px; }
+  }
+  @media print {
+    .filters { display: none; }
+    body { background: #fff; }
+    .table-scroll { overflow: visible; border: 0; }
+    thead th, tbody th { position: static; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Which data center load counts</h1>
+    <p class="lede measure">How Pennsylvania, Virginia, Ohio, Maryland, New Jersey, and Illinois screen data center electricity requests before they count in the load forecasts that set PJM's capacity needs: forecast review, contract terms, collateral, duplicate-request disclosure, and public reporting. Current as of October 9, 2026.</p>
+    <p class="lede measure" style="margin-top:12px">Companion to <a href="https://jphoebus.github.io/large-load-tariffs/">Who pays for data center power</a>, which compares large-load tariffs. This comparison asks a different question of the same terms: what they do to the forecast.</p>
+
+    <div class="standing" aria-label="How each state screens large-load requests">
+      <div><strong>Pennsylvania</strong><span>PUC reviews forecasts by statute</span><time datetime="2026-06-30">First report June 2026</time></div>
+      <div><strong>Virginia</strong><span>Statewide pipeline report; 25 MW class</span><time datetime="2026-10-01">Report Oct. 1, 2026</time></div>
+      <div><strong>Ohio</strong><span>Utility tariff narrowed the queue</span><time datetime="2025-07-23">In effect since July 2025</time></div>
+      <div><strong>Maryland</strong><span>Registry and duplicate disclosure enacted</span><time datetime="2026-10-23">Tariff hearings begin Oct. 23</time></div>
+      <div><strong>New Jersey</strong><span>Duplicate disclosure enacted</span><time datetime="2027-07-07">BPU standards due by July 2027</time></div>
+      <div><strong>Illinois</strong><span>Deposits scaled to project size</span><time datetime="2026-03-19">ICC order Mar. 19, 2026</time></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="comparison">
+    <div class="wrap">
+      <h2>Side-by-side comparison</h2>
+      <p class="measure">Choose which states to compare. On a phone, scroll the table sideways. Where a detail rests on a secondary source rather than the statute, order, or tariff itself, the table says "as reported."</p>
+      <div class="filters" id="filters" role="group" aria-label="States to compare"><p>Showing:</p><button class="chip" type="button" aria-pressed="true" data-state="pennsylvania">Pennsylvania</button><button class="chip" type="button" aria-pressed="true" data-state="virginia">Virginia</button><button class="chip" type="button" aria-pressed="true" data-state="ohio">Ohio</button><button class="chip" type="button" aria-pressed="true" data-state="maryland">Maryland</button><button class="chip" type="button" aria-pressed="true" data-state="new-jersey">New Jersey</button><button class="chip" type="button" aria-pressed="true" data-state="illinois">Illinois</button></div>
+      <div class="table-scroll" tabindex="0" aria-label="Comparison table">
+        <table id="table">
+<thead><tr><th scope="col"></th>
+<th scope="col" data-state="pennsylvania">Pennsylvania</th>
+<th scope="col" data-state="virginia">Virginia</th>
+<th scope="col" data-state="ohio">Ohio</th>
+<th scope="col" data-state="maryland">Maryland</th>
+<th scope="col" data-state="new-jersey">New Jersey</th>
+<th scope="col" data-state="illinois">Illinois</th>
+</tr></thead><tbody>
+<tr class="group"><th colspan="7" scope="colgroup">Who reviews the forecast</th></tr>
+<tr><th scope="row">Commission review of load forecasts</th>
+<td data-state="pennsylvania">Yes, by statute. Act 45 of 2025 requires the PUC to investigate and validate the load forecasts utilities submit to PJM. In December 2025 the PUC required each utility to provide its PJM large load adjustment and copies of all executed contracts with customers over 50 MW (or 100 MW combined). The PUC&#x27;s first annual report (June 2026) found no double counting of firm load within Pennsylvania. Act 21 of 2026 extends review of the underlying agreements to the PUC&#x27;s enforcement bureau and the statutory advocates (as reported by Steptoe &amp; Johnson).</td>
+<td data-state="virginia">Partial. Dominion shared its 2027 forecast with the SCC on Aug. 14, 2026, and the SCC acknowledged it on Aug. 28; that is not an approval. HB 892 (2026) requires the SCC to open a proceeding on utility load-forecasting practices by March 1, 2027 (as reported).</td>
+<td data-state="ohio">None found. AEP told PJM that four of the five state regulators it serves reviewed or endorsed its 2027 method; it did not name them.</td>
+<td data-state="maryland">None found.</td>
+<td data-state="new-jersey">None found. The law has utilities let customers review and correct load data before it goes to PJM.</td>
+<td data-state="illinois">None found. The state&#x27;s first integrated resource plan under the CRGA Act (Public Act 104-0458) is due Nov. 15, 2026.</td>
+</tr>
+<tr class="group"><th colspan="7" scope="colgroup">Who it applies to</th></tr>
+<tr><th scope="row">Size threshold</th>
+<td data-state="pennsylvania">PUC model tariff: over 50 MW individually or 100 MW in aggregate. PPL&#x27;s approved tariff: 50 MW at one facility, or 75 MW combined across nearby facilities.</td>
+<td data-state="virginia">GS-5 rate class: 25 MW or more on one site, with a load factor of at least 75%.</td>
+<td data-state="ohio">AEP Ohio data center tariff: 25 MW.</td>
+<td data-state="maryland">25 MW or more, with a load factor above 60% (Utility RELIEF Act, Chapter 353 of 2026).</td>
+<td data-state="new-jersey">Set by the BPU, no higher than 50 MW, counting commonly owned or neighboring sites together.</td>
+<td data-state="illinois">ComEd&#x27;s deposit schedule starts at 50 MW.</td>
+</tr>
+<tr class="group"><th colspan="7" scope="colgroup">What customers commit to</th></tr>
+<tr><th scope="row">Contract term and minimum bill</th>
+<td data-state="pennsylvania">Model tariff (guidance): at least 5 years after the load ramp, and 48 months&#x27; notice to exit or reduce load, aligned with the PJM forecast; 80% minimum bill (as reported by K&amp;L Gates). PPL: at least 10 years with a ramp of up to 5 years; minimum bill of 80% in years 1 to 5 and 50% in years 6 to 10; exit fee equal to the remaining minimum.</td>
+<td data-state="virginia">14-year contract with a ramp of up to 4 years. Minimum charges of 85% of contracted transmission and distribution demand and 60% of contracted generation demand. Exit fee covering the remaining minimum charges.</td>
+<td data-state="ohio">Up to 12 years: a ramp of up to 4 years plus 8 years. Minimum bill of up to 85% of contract capacity, on a sliding scale by size. Exit fee equal to 36 months of minimum charges.</td>
+<td data-state="maryland">The statute requires rate schedules to address minimum billing demand but sets no percentage. Tariff terms pending before the PSC.</td>
+<td data-state="new-jersey">Guarantee payment for at least 85% of requested supply for 10 years, unless the BPU&#x27;s standards provide otherwise. No exit fee or ramp provision.</td>
+<td data-state="illinois">Minimum payment and security obligations approved by the ICC; terms not public.</td>
+</tr>
+<tr><th scope="row">Collateral and deposits</th>
+<td data-state="pennsylvania">Model tariff: collateral reduced as the load ramps up. PPL: security equal to the cost of upgrades built to serve the customer.</td>
+<td data-state="virginia">$1.5 million per MW, reducible by up to 70% for strong credit and released over the contract term.</td>
+<td data-state="ohio">50% of total minimum charges for the full term, unless the customer meets credit standards; surety bonds not accepted.</td>
+<td data-state="maryland">Pending. The governor&#x27;s Sept. 23, 2026 executive order says developers should accept collateral, minimum bills, and exit fees.</td>
+<td data-state="new-jersey">Deposits or other financial security; highly rated customers may substitute financial commitments.</td>
+<td data-state="illinois">$1 million deposit for 50 to 200 MW, plus $500,000 for each additional 100 MW; letter of credit if the deposit exceeds $2 million (as reported by Capitol News Illinois). ComEd reports eight transmission security agreements backed by more than $2 billion.</td>
+</tr>
+<tr><th scope="row">Studies and queue rules</th>
+<td data-state="pennsylvania">Model tariff: studies completed within 6 months; utilities post large-load requests and study status publicly without naming the customer.</td>
+<td data-state="virginia">No standard fee found. In its PJM submission, Dominion counts signed service agreements and construction authorizations as firm, and includes 41% of load still at the engineering-authorization stage.</td>
+<td data-state="ohio">Paid load study before signing: $10,000 to $100,000 depending on size; customers sign within 60 days of the study.</td>
+<td data-state="maryland">Registration fee of at least $1,000 per MW of peak load, directed to low-income programs.</td>
+<td data-state="new-jersey">Customers pay interconnection and study costs. Utilities give interconnection priority to customers that commit to clean supply or demand reduction.</td>
+<td data-state="illinois">Deposits are refundable, less study and upgrade costs, if a project cancels (as reported).</td>
+</tr>
+<tr class="group"><th colspan="7" scope="colgroup">Double counting and transparency</th></tr>
+<tr><th scope="row">Duplicate-request disclosure</th>
+<td data-state="pennsylvania">No requirement found. The PUC&#x27;s Act 45 review found no double counting of firm load within the state.</td>
+<td data-state="virginia">No requirement found.</td>
+<td data-state="ohio">No requirement found.</td>
+<td data-state="maryland">Yes, by statute. A new PSC registry requires disclosure of substantially similar requests at a Maryland utility or a utility in another PJM state. Not yet operating.</td>
+<td data-state="new-jersey">Yes, by statute. Customers must disclose substantially similar pending requests at any other utility, in New Jersey or elsewhere. Not yet in effect.</td>
+<td data-state="illinois">No requirement found.</td>
+</tr>
+<tr><th scope="row">Public pipeline reporting</th>
+<td data-state="pennsylvania">Public request postings under the model tariff, as each utility adopts it, and the PUC&#x27;s annual Act 45 report. Data centers of 10 MW or more report energy and water use to DEP each year starting July 1, 2027 (Act 21).</td>
+<td data-state="virginia">Yes, by statute. The SCC&#x27;s first annual report (Oct. 1, 2026) lists 21,791 MW of contracted data center demand across five utilities, including 11,997 MW for Dominion.</td>
+<td data-state="ohio">No standing requirement. AEP told PUCO in February 2026 that about 13,000 MW of paid study requests had produced 5,642 MW of signed agreements (as reported by New Project Media).</td>
+<td data-state="maryland">The governor&#x27;s executive order creates a public dashboard of projects of 25 MW or more, updated at least monthly.</td>
+<td data-state="new-jersey">No public queue required. PSE&amp;G reported 9.4 GW of requests in 2025 and said it expects 10% to 20% to come online.</td>
+<td data-state="illinois">None required. The ICC cited more than 75 projects totaling over 28,000 MW in ComEd&#x27;s territory.</td>
+</tr>
+<tr class="group"><th colspan="7" scope="colgroup">Status and sources</th></tr>
+<tr><th scope="row">Status, October 2026</th>
+<td data-state="pennsylvania">Model tariff adopted as guidance (voted April 30, 2026). PPL is the only utility with an approved large-load tariff (June 4, 2026).</td>
+<td data-state="virginia">GS-5 approved Nov. 25, 2025; takes effect Jan. 1, 2027.</td>
+<td data-state="ohio">In effect since July 23, 2025. The Ohio Manufacturers&#x27; Association appealed to the Ohio Supreme Court on Nov. 3, 2025.</td>
+<td data-state="maryland">Utility rate schedules were due Sept. 1, 2026. The BGE, Pepco, and Delmarva tariff is pending before the PSC, with hearings Oct. 23 and Dec. 8-11, 2026.</td>
+<td data-state="new-jersey">S731/A796 signed July 7, 2026. BPU standards due within 12 months; utility tariffs due 180 days after that.</td>
+<td data-state="illinois">ICC order March 19, 2026. A follow-on investigation of further protections is expected to finish around November 2026 (as reported).</td>
+</tr>
+<tr><th scope="row">Sources</th>
+<td class="sources" data-state="pennsylvania"><a href="https://www.puc.pa.gov/pcdocs/1906324.pdf" rel="noopener">puc.pa.gov</a><a href="https://www.puc.pa.gov/media/3981/final-act-45-report-2026-6_26_26.pdf" rel="noopener">puc.pa.gov</a><a href="https://www.puc.pa.gov/pcdocs/1929842.pdf" rel="noopener">puc.pa.gov</a><a href="https://www.puc.pa.gov/pcdocs/1923934.pdf" rel="noopener">puc.pa.gov</a><a href="https://www.steptoe-johnson.com/news/pennsylvania-raises-the-regulatory-bar-for-data-center-development/" rel="noopener">steptoe-johnson.com</a><a href="https://www.klgates.com/thought-leadership/Pennsylvania-Public-Utility-Commission-Adopts-Model-Interconnection-Tariff-for-Large-Load-Customers-5-29-2026" rel="noopener">klgates.com</a></td>
+<td class="sources" data-state="virginia"><a href="https://rga.lis.virginia.gov/Published/2026/RD637" rel="noopener">rga.lis.virginia.gov</a><a href="https://www.scc.virginia.gov/about-the-scc/newsreleases/release/scc-issues-order-on-dev-biennial-review-2025/scc-rules-in-dev-biennial-review-case.html" rel="noopener">scc.virginia.gov</a><a href="https://npr.brightspotcdn.com/b6/ac/706130b64d2b8eee6a9832b97e48/20251125-virginiascc-dominionenergyruling.pdf" rel="noopener">npr.brightspotcdn.com</a><a href="https://www.pjm.com/-/media/DotCom/committees-groups/subcommittees/las/2026/20260929/20260929-item-5ai---dominion_energy.pdf" rel="noopener">pjm.com</a><a href="https://virginiamercury.com/2026/04/30/new-state-law-mandates-review-of-dominions-load-forecasting-as-data-centers-raise-concerns/" rel="noopener">virginiamercury.com</a></td>
+<td class="sources" data-state="ohio"><a href="https://www.aepohio.com/company/about/rates/data-center-tariff" rel="noopener">aepohio.com</a><a href="https://dam.assets.ohio.gov/image/upload/puco.ohio.gov/Commission%20minutes/2025/July_9_2025.pdf" rel="noopener">dam.assets.ohio.gov</a><a href="https://www.pjm.com/-/media/DotCom/committees-groups/subcommittees/las/2026/20260929/20260929-item-5f---aep.pdf" rel="noopener">pjm.com</a><a href="https://newprojectmedia.com/policy-aep-ohio-touts-right-sized-load-as-data-center-pipeline-shrinks-further-under-new-tariff/" rel="noopener">newprojectmedia.com</a><a href="https://www.ohiomfg.com/wp-content/uploads/2025/11/OMA-Asks-Ohio-Supreme-Court-to-Overturn-PUCOs-Discriminatory-Rate-Plan-Decision.pdf" rel="noopener">ohiomfg.com</a></td>
+<td class="sources" data-state="maryland"><a href="https://mgaleg.maryland.gov/2026RS/Chapters_noln/CH_353_hb1532e.pdf" rel="noopener">mgaleg.maryland.gov</a><a href="https://mgaleg.maryland.gov/2026RS/fnotes/bil_0002/hb1532.pdf" rel="noopener">mgaleg.maryland.gov</a><a href="https://opc.maryland.gov/Portals/0/Files/Publications/Others/20260810%20-%20OPC%20Comments%20-%20PC72.pdf" rel="noopener">opc.maryland.gov</a><a href="https://governor.maryland.gov/media/1083" rel="noopener">governor.maryland.gov</a><a href="https://chestertownspy.org/2026/09/30/bge-delmarva-power-and-pepco-propose-plan-to-protect-maryland-customers-from-large-energy-user-cost-shifts/" rel="noopener">chestertownspy.org</a></td>
+<td class="sources" data-state="new-jersey"><a href="https://pub.njleg.state.nj.us/Bills/2026/A1000/796_R4.PDF" rel="noopener">pub.njleg.state.nj.us</a><a href="https://njbia.org/sherrill-signs-legislation-tackling-energy-costs-data-center-power-demand/" rel="noopener">njbia.org</a><a href="https://www.datacenterdynamics.com/en/news/new-jersey-utility-pseg-sees-large-load-pipeline-surge-to-94gw-90-from-data-centers/" rel="noopener">datacenterdynamics.com</a></td>
+<td class="sources" data-state="illinois"><a href="https://capitolnewsillinois.com/news/regulators-ok-comeds-plan-to-increase-deposit-costs-for-large-load-projects-like-data-centers/" rel="noopener">capitolnewsillinois.com</a><a href="https://elpc.org/news/icc-orders-investigation-into-data-center-risks-in-comed-case/" rel="noopener">elpc.org</a><a href="https://ipa.illinois.gov/crga.html" rel="noopener">ipa.illinois.gov</a><a href="https://morrisil.org/wp-content/uploads/How-ComEd-is-Addressing-Data-Center-Growth_Fact-Sheet.pdf" rel="noopener">morrisil.org</a></td>
+</tr>
+<tr><th scope="row">Last updated</th>
+<td data-state="pennsylvania">2026-10-09</td>
+<td data-state="virginia">2026-10-09</td>
+<td data-state="ohio">2026-10-09</td>
+<td data-state="maryland">2026-10-09</td>
+<td data-state="new-jersey">2026-10-09</td>
+<td data-state="illinois">2026-10-09</td>
+</tr>
+</tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="pjm">
+    <div class="wrap">
+      <h2>How PJM decides what counts</h2>
+      <p class="measure">State screening feeds a regional process. Utilities submit their expected large loads to PJM, and PJM decides how much to include in the forecast that sets capacity auction demand.</p>
+      <div class="pjm">
+        <div>
+          <h3>PJM's test</h3>
+          <p>Under Manual 19, Revision 39 (effective June 30, 2026), load counts as firm for capacity auction years only with "an ESO or CC or long-term supply commitment (with new or existing resources) plus a financial commitment (such as credit/collateral support or infrastructure investment)." An ESO is a signed electric service obligation and a CC is a construction commitment. Requests a customer won't confirm as unique are treated as duplicates.</p>
+        </div>
+        <div>
+          <h3>The state step</h3>
+          <p>Utilities must record when they shared their submission with the state regulator and what feedback came back, with the regulator's verification that the feedback is described accurately. The review is voluntary for the regulator, and PJM keeps the final call. In practice, state tariff terms produce much of the evidence PJM now needs to count load as firm.</p>
+        </div>
+        <div>
+          <h3>What's at stake</h3>
+          <p>PJM's Independent Market Monitor attributes $6.3 billion of the $16.4 billion in 2028/2029 capacity charges (38.2%) to data center load, with 21,470 MW of data center load in the forecast behind that auction. FERC accepted PJM's reliability backstop procurement on Sept. 29, 2026, effective Feb. 28, 2027; PJM's proposed interim service and large load registry are pending at FERC.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="analysis">
+    <div class="wrap">
+      <div class="analysis">
+        <div>
+          <h2>What stands out</h2>
+          <h3>Tariff terms do most of the screening</h3>
+          <p>Minimum bills, long contracts, collateral, and paid studies make a speculative request expensive to hold. Ohio shows the effect: after AEP Ohio's tariff took effect, about 13,000 MW of paid study requests produced 5,642 MW of signed agreements, as reported.</p>
+          <h3>The terms are converging</h3>
+          <p>Thresholds run from 25 to 50 MW, bracketing PJM's own 50 MW line. Where minimum bills are set, they cluster at 80 to 85 percent of contracted demand, in Pennsylvania (PPL), Virginia, Ohio, and New Jersey.</p>
+          <h3>Forecast review is rare</h3>
+          <p>Pennsylvania is the only one of the six states whose commission reviews utility forecasts to PJM under statute, with the underlying contracts in hand. Virginia's commission received and acknowledged Dominion's forecast. No equivalent step was found in Ohio, Maryland, New Jersey, or Illinois.</p>
+          <h3>Tools against double counting are the least developed</h3>
+          <p>New Jersey and Maryland require developers to disclose duplicate requests at other utilities, including in other states. Neither requirement is operating yet. PJM now asks the same question at the forecast level.</p>
+          <h3>State terms arrive after PJM's test</h3>
+          <p>PJM's firm test applies to the 2027 forecast, whose submission window opened in July 2026. Virginia's rate class starts in January 2027, New Jersey's tariffs are due around 2028, Maryland's are pending, and in Pennsylvania only PPL has an approved tariff.</p>
+        </div>
+        <div>
+          <h2>What to watch</h2>
+          <ul class="watch">
+            <li>October 2026: FERC action on PJM's large load interim service and registry (ER26-3515); PJM asked for an Oct. 12 effective date.</li>
+            <li>October 23 and December 8-11, 2026: Maryland PSC hearings on the BGE, Pepco, and Delmarva large-load tariff.</li>
+            <li>November 15, 2026: Illinois' first integrated resource plan under the CRGA Act.</li>
+            <li>January 1, 2027: Virginia's GS-5 rate class takes effect.</li>
+            <li>February 28, 2027: PJM's reliability backstop procurement takes effect, with cost allocation still before FERC.</li>
+            <li>March 1, 2027: Deadline for Virginia's SCC proceeding on utility load forecasting, as reported.</li>
+            <li>Mid-2027: Pennsylvania PUC's second annual Act 45 report; New Jersey BPU standards; first DEP data center reports in Pennsylvania (July 1).</li>
+          </ul>
+          <p class="question">The question I expect to shape the next cycle: whether states build a shared way to catch the same data center counted in more than one territory, or leave that job to PJM.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap measure">
+    <p>Compiled by Joshua Phoebus, former Director of Performance and Transformation in the Office of Pennsylvania Governor Tom Wolf. <a href="https://www.linkedin.com/in/joshuaphoebus">LinkedIn</a> · <a href="https://www.joshuaphoebusllc.com">Website</a></p>
+    <p>Related: <a href="https://jphoebus.github.io/large-load-tariffs/">Who pays for data center power</a> · <a href="https://jphoebus.github.io/data-center-legislation-2026/">What states changed on data centers in 2026</a> · <a href="https://jphoebus.github.io/state-incentive-comparison/">State data center incentives, compared</a> · <a href="https://jphoebus.github.io/data-center-exempt-equipment/">What counts as exempt data center equipment</a> · <a href="https://jphoebus.github.io/tax-incentive-evaluation/">How states check their tax incentives</a> · <a href="https://jphoebus.github.io/spark-grid-tracker/">DOE's SPARK grid selections, tracked</a> · <a href="https://jphoebus.github.io/quantum-readiness/">Are state rules ready for quantum computing?</a></p>
+    <p>PJM sources: <a href="https://www.pjm.com/-/media/DotCom/documents/manuals/m19.pdf">Manual 19</a> · <a href="https://www.pjm.com/-/media/DotCom/about-pjm/who-we-are/public-disclosures/2026/20260116-pjm-board-letter-re-results-of-the-cifp-process-large-load-additions.pdf">PJM Board letter, Jan. 16, 2026</a> · <a href="https://www.pjm.com/-/media/DotCom/committees-groups/committees/mc/2026/20260727-web/item-02---marketing-monitoring-report---presentation.pdf">Independent Market Monitor, July 27, 2026</a> · <a href="https://www.pjm.com/pjmfiles/directory/etariff/FercOrders/9154/20260929-er26-3380-000.pdf">FERC order, Sept. 29, 2026</a></p>
+    <p>Each state's sources are listed in the table. The underlying data is in <a href="large-load-screening.csv">large-load-screening.csv</a>. This comparison is for policy analysis and is not legal or regulatory advice.</p>
+  </div>
+</footer>
+
+<script>
+  // Each state button shows or hides that state's column. The table itself is plain HTML,
+  // so it displays even if this script never runs.
+  document.querySelectorAll("#filters .chip").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var on = b.getAttribute("aria-pressed") === "true";
+      b.setAttribute("aria-pressed", on ? "false" : "true");
+      document.querySelectorAll('#table [data-state="' + b.dataset.state + '"]').forEach(function (c) { c.hidden = on; });
+    });
+  });
+</script>
+</body>
+</html>
