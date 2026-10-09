@@ -11,16 +11,16 @@ PJM's capacity auctions buy enough supply to meet a forecast, and data center re
 ## How PJM decides what counts
 
 - **PJM's test.** Under Manual 19, Revision 39 (effective June 30, 2026), load counts as firm for capacity auction years only with "an ESO or CC or long-term supply commitment (with new or existing resources) plus a financial commitment (such as credit/collateral support or infrastructure investment)."
-- **The state step.** Utilities must record when they shared their submission with the state regulator and what feedback came back, with the regulator's verification. The review is voluntary for the regulator, and PJM keeps the final call.
+- **The state step.** Utilities must record when they shared their submission with the state regulator and what feedback came back, with the regulator's verification. The review is voluntary for the regulator, and PJM makes the final determination.
 - **What's at stake.** PJM's Independent Market Monitor attributes $6.3 billion of the $16.4 billion in 2028/2029 capacity charges (38.2%) to data center load.
 
 ## What stands out
 
 - **Tariff terms do most of the screening.** Minimum bills, long contracts, collateral, and paid studies make a speculative request expensive to hold. In Ohio, about 13,000 MW of paid study requests produced 5,642 MW of signed agreements after AEP Ohio's tariff took effect, as reported.
 - **The terms are converging.** Thresholds run from 25 to 50 MW, bracketing PJM's own 50 MW line. Where minimum bills are set, they cluster at 80 to 85 percent of contracted demand.
-- **Forecast review is rare.** Pennsylvania is the only one of the six states whose commission reviews utility forecasts to PJM under statute, with the underlying contracts in hand.
-- **Tools against double counting are the least developed.** New Jersey and Maryland require developers to disclose duplicate requests at other utilities. Neither requirement is operating yet.
-- **State terms arrive after PJM's test.** PJM's firm test applies to the 2027 forecast. Virginia's rate class starts in January 2027, New Jersey's tariffs are due around 2028, Maryland's are pending, and in Pennsylvania only PPL has an approved tariff.
+- **Pennsylvania has gone furthest on forecast review.** Pennsylvania is the only one of the six states whose commission reviews utility forecasts to PJM under statute, with the underlying contracts in hand.
+- **New Jersey and Maryland moved first on duplicate requests.** New Jersey and Maryland require developers to disclose duplicate requests at other utilities. Both requirements are still being implemented, and PJM's forecast process now asks a similar question.
+- **States are on different timelines.** Ohio's tariff has been in effect since July 2025, and Illinois' deposit schedule since March 2026. In Pennsylvania, PPL's tariff was approved in June 2026. Virginia's rate class starts in January 2027, Maryland's tariffs are before its commission now, and New Jersey's are due around 2028. PJM's firm standard applies to the 2027 forecast.
 
 ## What to watch
 
@@ -32,7 +32,7 @@ PJM's capacity auctions buy enough supply to meet a forecast, and data center re
 - March 1, 2027: Deadline for Virginia's SCC proceeding on utility load forecasting, as reported.
 - Mid-2027: Pennsylvania PUC's second annual Act 45 report; New Jersey BPU standards; first DEP data center reports in Pennsylvania (July 1).
 
-The question I expect to shape the next cycle: whether states build a shared way to catch the same data center counted in more than one territory, or leave that job to PJM.
+The question I expect to shape the next cycle: how states coordinate with one another so the same data center isn't counted in more than one territory.
 
 ## About the data
 
