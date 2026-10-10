@@ -4,6 +4,8 @@ How Pennsylvania, Virginia, Ohio, Maryland, New Jersey, and Illinois screen data
 
 **Interactive version:** [jphoebus.github.io/large-load-screening](https://jphoebus.github.io/large-load-screening/)
 
+**All projects:** [jphoebus.github.io](https://jphoebus.github.io/)
+
 ## Why this comparison
 
 PJM's capacity auctions buy enough supply to meet a forecast, and data center requests now drive much of that forecast. Utilities submit their expected large loads to PJM, but much of the screening that separates real projects from speculative ones happens in state law, commission orders, and utility tariffs. This comparison puts those state tools side by side for six PJM states. It is a companion to [Who pays for data center power](https://jphoebus.github.io/large-load-tariffs/), which compares large-load tariffs, and asks a different question of the same terms: what they do to the forecast.
