@@ -25,7 +25,9 @@ PJM's capacity auctions buy enough supply to meet a forecast, and data center re
 ## What to watch
 
 - October 2026: FERC action on PJM's large load interim service and registry (ER26-3515).
+- October 22, 2026: PJM Members Committee special meeting on the reliability backstop procurement.
 - October 23 and December 8-11, 2026: Maryland PSC hearings on the BGE, Pepco, and Delmarva large-load tariff.
+- October 29, 2026: PJM's revised backstop proposal due at FERC, including cost allocation and the role of state regulators.
 - November 15, 2026: Illinois' first integrated resource plan under the CRGA Act.
 - January 1, 2027: Virginia's GS-5 rate class takes effect.
 - February 28, 2027: PJM's reliability backstop procurement takes effect, with cost allocation still before FERC.
