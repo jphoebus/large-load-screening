@@ -1,6 +1,6 @@
 # Which Data Center Load Counts: How Six PJM States Screen Large-Load Requests
 
-How Pennsylvania, Virginia, Ohio, Maryland, New Jersey, and Illinois screen data center electricity requests before they count in the load forecasts that set PJM's capacity needs: forecast review, contract terms, collateral, duplicate-request disclosure, and public reporting. Current as of October 9, 2026.
+How Pennsylvania, Virginia, Ohio, Maryland, New Jersey, and Illinois screen data center electricity requests before they count in the load forecasts that set PJM's capacity needs: forecast review, contract terms, collateral, duplicate-request disclosure, and public reporting. Current as of October 12, 2026.
 
 **Interactive version:** [jphoebus.github.io/large-load-screening](https://jphoebus.github.io/large-load-screening/)
 
@@ -26,7 +26,7 @@ PJM's capacity auctions buy enough supply to meet a forecast, and data center re
 
 ## What to watch
 
-- October 2026: FERC action on PJM's large load interim service and registry (ER26-3515).
+- Fall 2026: How PJM responds to FERC's October 9 order, and whether states set their own terms for serving new large loads.
 - October 22, 2026: PJM Members Committee special meeting on the reliability backstop procurement.
 - October 23 and December 8-11, 2026: Maryland PSC hearings on the BGE, Pepco, and Delmarva large-load tariff.
 - October 29, 2026: PJM's revised backstop proposal due at FERC, including cost allocation and the role of state regulators.
@@ -41,6 +41,8 @@ The question I expect to shape the next cycle: how states coordinate with one an
 ## About the data
 
 The full comparison is in [large-load-screening.csv](large-load-screening.csv), with one row per state and 11 columns: commission review of load forecasts, size threshold, contract term and minimum bill, collateral and deposits, studies and queue rules, duplicate-request disclosure, public pipeline reporting, status, sources, and last updated. Facts are drawn from statutes, commission orders, utility tariffs, and PJM documents wherever possible. Where a detail rests on a secondary source, the file says "as reported." This comparison is for policy analysis and is not legal or regulatory advice.
+
+On FERC's October 9, 2026 order: Utility Dive, ["FERC rejects PJM large-load plan,"](https://www.utilitydive.com/news/ferc-pjm-large-load-interconnection-iras-byonc/832716/) October 12, 2026.
 
 ## Related projects
 
