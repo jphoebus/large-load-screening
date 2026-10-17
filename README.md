@@ -1,6 +1,6 @@
 # Which Data Center Load Counts: How Six PJM States Screen Large-Load Requests
 
-How Pennsylvania, Virginia, Ohio, Maryland, New Jersey, and Illinois screen data center electricity requests before they count in the load forecasts that set PJM's capacity needs: forecast review, contract terms, collateral, duplicate-request disclosure, and public reporting. Current as of October 12, 2026.
+How Pennsylvania, Virginia, Ohio, Maryland, New Jersey, and Illinois screen data center electricity requests before they count in the load forecasts that set PJM's capacity needs: forecast review, contract terms, collateral, duplicate-request disclosure, and public reporting. Current as of October 17, 2026.
 
 **Interactive version:** [jphoebus.github.io/large-load-screening](https://jphoebus.github.io/large-load-screening/)
 
@@ -14,7 +14,7 @@ PJM's capacity auctions buy enough supply to meet a forecast, and data center re
 
 - **PJM's test.** Under Manual 19, Revision 39 (effective June 30, 2026), load counts as firm for capacity auction years only with "an ESO or CC or long-term supply commitment (with new or existing resources) plus a financial commitment (such as credit/collateral support or infrastructure investment)."
 - **The state step.** Utilities must record when they shared their submission with the state regulator and what feedback came back, with the regulator's verification. The review is voluntary for the regulator, and PJM makes the final determination.
-- **What's at stake.** PJM's Independent Market Monitor attributes $6.3 billion of the $16.4 billion in 2028/2029 capacity charges (38.2%) to data center load.
+- **What's at stake.** PJM's Independent Market Monitor attributes $6.3 billion of the $16.4 billion in 2028/2029 capacity charges (38.2%) to data center load. In September, the monitor also reported that 42% of forecast data center growth through 2028/29 had been canceled or delayed.
 
 ## What stands out
 
