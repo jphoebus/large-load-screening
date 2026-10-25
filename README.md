@@ -1,6 +1,6 @@
 # Which Data Center Load Counts: How Six PJM States Screen Large-Load Requests
 
-How Pennsylvania, Virginia, Ohio, Maryland, New Jersey, and Illinois screen data center electricity requests before they count in the load forecasts that set PJM's capacity needs: forecast review, contract terms, collateral, duplicate-request disclosure, and public reporting. Current as of October 17, 2026.
+How Pennsylvania, Virginia, Ohio, Maryland, New Jersey, and Illinois screen data center electricity requests before they count in the load forecasts that set PJM's capacity needs: forecast review, contract terms, collateral, duplicate-request disclosure, and public reporting. Current as of October 25, 2026.
 
 **Interactive version:** [jphoebus.github.io/large-load-screening](https://jphoebus.github.io/large-load-screening/)
 
@@ -43,7 +43,7 @@ The question I expect to shape the next cycle: how states coordinate with one an
 
 The full comparison is in [large-load-screening.csv](large-load-screening.csv), with one row per state and 11 columns: commission review of load forecasts, size threshold, contract term and minimum bill, collateral and deposits, studies and queue rules, duplicate-request disclosure, public pipeline reporting, status, sources, and last updated. Facts are drawn from statutes, commission orders, utility tariffs, and PJM documents wherever possible. Where a detail rests on a secondary source, the file says "as reported." This comparison is for policy analysis and is not legal or regulatory advice.
 
-On FERC's October 9, 2026 order: Utility Dive, ["FERC rejects PJM large-load plan,"](https://www.utilitydive.com/news/ferc-pjm-large-load-interconnection-iras-byonc/832716/) October 12, 2026.
+On FERC's October 9, 2026 order: [FERC order, PJM Interconnection, L.L.C., 197 FERC ¶ 61,019, Docket ER26-3515-000 (Oct. 9, 2026)](https://elibrary.ferc.gov/eLibrary/docinfo?accession_number=20261009-3055); Utility Dive, ["FERC rejects PJM large-load plan,"](https://www.utilitydive.com/news/ferc-pjm-large-load-interconnection-iras-byonc/832716/) October 12, 2026.
 
 ## Related projects
 
