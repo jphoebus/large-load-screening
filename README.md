@@ -1,6 +1,6 @@
 # Which Data Center Load Counts: How Six PJM States Screen Large-Load Requests
 
-How Pennsylvania, Virginia, Ohio, Maryland, New Jersey, and Illinois screen data center electricity requests before they count in the load forecasts that set PJM's capacity needs: forecast review, contract terms, collateral, duplicate-request disclosure, and public reporting. Current as of October 26, 2026.
+How Pennsylvania, Virginia, Ohio, Maryland, New Jersey, and Illinois screen data center electricity requests before they count in the load forecasts that set PJM's capacity needs: forecast review, contract terms, collateral, duplicate-request disclosure, and public reporting. Current as of October 29, 2026.
 
 **Interactive version:** [jphoebus.github.io/large-load-screening](https://jphoebus.github.io/large-load-screening/)
 
