@@ -29,9 +29,9 @@ PJM's capacity auctions buy enough supply to meet a forecast, and data center re
 - Fall 2026: How PJM responds to FERC's October 9 order, and whether states set their own terms for serving new large loads.
 - November 13, 2026: Initial briefs due in FERC's paper hearing on the backstop.
 - November 15, 2026: Illinois' first integrated resource plan under the CRGA Act.
-- Nov. 23, 2026: Requested deadline for PJM board’s written response to the consumer advocates’ letter (as reported).
+- November 23, 2026: Requested deadline for PJM board’s written response to the consumer advocates’ letter (as reported).
 - December 8-11, 2026: Maryland PSC hearings on the BGE, Pepco, and Delmarva large-load tariff.
-- Dec. 9–15, 2026: PJM base capacity auction for 2029/30.
+- December 9-15, 2026: PJM base capacity auction for 2029/30.
 - January 1, 2027: Virginia's GS-5 rate class takes effect.
 - January 2027: PJM's 2027 long-term load forecast, after its Load Analysis Subcommittee reviews utilities' requested large-load adjustments. The forecast feeds the backstop procurement target (as reported).
 - February 28, 2027: PJM's reliability backstop procurement takes effect, with cost allocation still before FERC.
