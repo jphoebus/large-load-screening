@@ -1,6 +1,6 @@
 # Which Data Center Load Counts: How Six PJM States Screen Large-Load Requests
 
-How Pennsylvania, Virginia, Ohio, Maryland, New Jersey, and Illinois screen data center electricity requests before they count in the load forecasts that set PJM's capacity needs: forecast review, contract terms, collateral, duplicate-request disclosure, and public reporting. Current as of November 22, 2026.
+How Pennsylvania, Virginia, Ohio, Maryland, New Jersey, and Illinois screen data center electricity requests before they count in the load forecasts that set PJM's capacity needs: forecast review, contract terms, collateral, duplicate-request disclosure, and public reporting. Current as of November 23, 2026.
 
 **Interactive version:** [jphoebus.github.io/large-load-screening](https://jphoebus.github.io/large-load-screening/)
 
@@ -38,6 +38,7 @@ PJM's capacity auctions buy enough supply to meet a forecast, and data center re
 - March 1-28, 2027: PJM's proposed bid window for the reliability backstop procurement, with the final procurement target set April 28 and results May 10, if FERC accepts the amended filing.
 - March 1, 2027: Deadline for Virginia's SCC proceeding on utility load forecasting, as reported.
 - Mid-2027: Pennsylvania PUC's second annual Act 45 report; New Jersey BPU standards; first DEP data center reports in Pennsylvania (July 1).
+- Pending: FERC’s order on PJM’s Fast Energization filing (filed Nov. 16, 2026; PJM asked for an order within 120 days).
 
 The question I expect to shape the next cycle: how states coordinate with one another so the same data center isn't counted in more than one territory.
 
